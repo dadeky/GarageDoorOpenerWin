@@ -6,9 +6,21 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
+    Loaded="Page_Loaded">
     <Grid>
-
+        <Button x:Name="BtnOpen" Click="OpenDoor" Content="Open" VerticalAlignment="Top" HorizontalAlignment="Center" />
+        <Button x:Name="BtnStop" Click="StopDoor" Content="Stop" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,100,0,0" />
+        <Button x:Name="BtnClose" Click="CloseDoor" Content="Close" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,200,0,0" />
+        <Button x:Name="BtnConnect" Content="Connect" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,300,0,0" Click="BtnConnect_Click" />
+        <!-- Messaging -->
+        <TextBlock Text="Messages" Margin="10,365,10,0" VerticalAlignment="Top" Height="15" />
+        <TextBlock x:Name="msgBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,385,10,0" Height="22" Width="380" />
+        <!-- Tension progressbar -->
+        <TextBlock x:Name="TensionProgressText" Text="Tension" Margin="10,425,10,0" Height="12" VerticalAlignment="Top" />
+        <ProgressBar x:Name="ElectricCurrentProgressBar" Margin="10,445,10,0" Height="8" Maximum="1023" BorderThickness="1" BorderBrush="White" VerticalAlignment="Top" Foreground="#FFF80B0B" />
+        <!-- Tension treshold setting -->
+        <TextBlock x:Name="TensionText" Text="Tension threshold" Margin="10,485,10,0" Height="12" VerticalAlignment="Top" />
+        <Slider x:Name="ElectricalCurrentSlider" Maximum="1023" Margin="10,489,10,0" Height="42" ValueChanged="ChangeDownCurrent" VerticalAlignment="Top" RenderTransformOrigin="0.504,0.722" />
     </Grid>
 </Page>
